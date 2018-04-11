@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Anotacões</h1>
+<hr>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Amigo</th>
+      <th  colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @anotacaos.each do |anotacao| %>
+      <tr>
+        <td><%= anotacao.body %></td>
+        <td><%= anotacao.amigo_name %></td>
+        <td width="30"><%= link_to raw('<i class="fa fa-eye"></i>'), anotacao, class: "btn btn-info btn-sm",  title: "Visualizar" %></td>
+        <td width="30"><%= link_to raw('<i class="fa fa-pencil"></i>'), edit_anotacao_path(anotacao), class: "btn btn-warning btn-sm", title: "Editar" %></td>
+        <td width="30"><%= link_to raw('<i class="fa fa-minus-circle"></i>'), anotacao, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm", title: "Deletar" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Anotacao', new_anotacao_path, class: "btn btn-primary" %>

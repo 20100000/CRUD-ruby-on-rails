@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @anotacao.body %>
+
+</p>
+<p>
+  <strong>Amigo:</strong>
+  <%= @anotacao.amigo_name %>
+</p>
+
+<%= link_to 'Edit', edit_anotacao_path(@anotacao), class: "btn btn-warning"%> |
+<%= link_to 'Back', anotacaos_path, class: "btn btn-default" %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @amigo.name %>
+</p>
+
+<p>
+  <strong>Endereco:</strong>
+  <%= @amigo.endereco %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @amigo.email %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @amigo.tel %>
+</p>
+
+<%= link_to 'Edit', edit_amigo_path(@amigo), class: "btn btn-warning"%> |
+<%= link_to 'Back', amigos_path, class: "btn btn-default" %>
