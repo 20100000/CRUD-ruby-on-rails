@@ -8,4 +8,10 @@ class Anotacao < ActiveRecord::Base
     end
 
   end
+
+  # def self.buscar(palavra)
+  #   where(" body LIKE ?", "%#{palavra}%")
+  # end
+
+  scope :buscar, ->(palavra) { where(" body LIKE ?", "%#{palavra}%")}
 end

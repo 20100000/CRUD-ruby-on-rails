@@ -1,10 +1,16 @@
 class AnotacaosController < ApplicationController
   before_action :set_anotacao, only: [:show, :edit, :update, :destroy]
+  #before_action :authenticate_admin!
+
 
   # GET /anotacaos
   # GET /anotacaos.json
   def index
-    @anotacaos = Anotacao.all
+    if params[:busca]
+      @anotacaos = Anotacao.buscar(params[:busca])
+    else
+      @anotacaos = Anotacao.all
+    end
   end
 
   # GET /anotacaos/1

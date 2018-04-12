@@ -1,5 +1,6 @@
 class AmigosController < ApplicationController
   before_action :set_amigo, only: [:show, :edit, :update, :destroy]
+  #before_action :authenticate_admin!
 
   # GET /amigos
   # GET /amigos.json
@@ -15,6 +16,7 @@ class AmigosController < ApplicationController
   # GET /amigos/new
   def new
     @amigo = Amigo.new
+    @amigo.build_endereco
   end
 
   # GET /amigos/1/edit
@@ -69,6 +71,6 @@ class AmigosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def amigo_params
-      params.require(:amigo).permit(:name, :endereco, :email, :tel)
+      params.require(:amigo).permit(:name, :endereco, :email, :tel, :endereco_attributes => [:lagradouro, :numero, :bairro, :cidade, :uf ])
     end
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  resources :enderecos
   resources :filhos
   resources :pais
   resources :statuses

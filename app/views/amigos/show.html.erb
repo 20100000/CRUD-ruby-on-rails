@@ -19,6 +19,30 @@
   <strong>Tel:</strong>
   <%= @amigo.tel %>
 </p>
+<p>
+  <strong>Lagradouro:</strong>
+  <%= @amigo.endereco.lagradouro %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @amigo.endereco.numero %>
+</p>
+
+<p>
+  <strong>Bairro:</strong>
+  <%= @amigo.endereco.bairro %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @amigo.endereco.cidade %>
+</p>
+
+<p>
+  <strong>Uf:</strong>
+  <%= @amigo.endereco.uf %>
+</p>
 
 <%= link_to 'Edit', edit_amigo_path(@amigo), class: "btn btn-warning"%> |
 <%= link_to 'Back', amigos_path, class: "btn btn-default" %>

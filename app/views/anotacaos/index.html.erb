@@ -1,6 +1,21 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-lg-7">
+    <h1>Anotacões</h1>
+  </div>
+  <div class="col-lg-5" style="margin-top: 2%">
+      <%= form_tag(anotacaos_path, :method => :get) do %>
+            <div class="input-group">
+              <%= text_field_tag 'busca', nil, class: 'form-control'%>
+                <span class="input-group-btn">
+                  <%= submit_tag 'buscar',  class: 'btn btn-primary'%>
+                </span>
+            </div>
 
-<h1>Anotacões</h1>
+      <% end %>
+  </div>
+
+</div>
 <hr>
 <table class="table table-condensed">
   <thead>
