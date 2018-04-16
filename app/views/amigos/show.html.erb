@@ -20,29 +20,31 @@
   <%= @amigo.tel %>
 </p>
 <p>
+<% if @amigo.descricao != "-" %>
   <strong>Lagradouro:</strong>
-  <%= @amigo.endereco.lagradouro %>
-</p>
+        <%= @amigo.endereco.lagradouro %>
+  </p>
 
-<p>
-  <strong>Numero:</strong>
-  <%= @amigo.endereco.numero %>
-</p>
+  <p>
+    <strong>Numero:</strong>
+    <%= @amigo.endereco.numero %>
+  </p>
 
-<p>
-  <strong>Bairro:</strong>
-  <%= @amigo.endereco.bairro %>
-</p>
+  <p>
+    <strong>Bairro:</strong>
+    <%= @amigo.endereco.bairro %>
+  </p>
 
-<p>
-  <strong>Cidade:</strong>
-  <%= @amigo.endereco.cidade %>
-</p>
+  <p>
+    <strong>Cidade:</strong>
+    <%= @amigo.endereco.cidade %>
+  </p>
 
-<p>
-  <strong>Uf:</strong>
-  <%= @amigo.endereco.uf %>
-</p>
+  <p>
+    <strong>Uf:</strong>
+    <%= @amigo.endereco.uf %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_amigo_path(@amigo), class: "btn btn-warning"%> |
 <%= link_to 'Back', amigos_path, class: "btn btn-default" %>

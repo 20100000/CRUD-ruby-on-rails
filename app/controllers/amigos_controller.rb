@@ -1,6 +1,6 @@
 class AmigosController < ApplicationController
   before_action :set_amigo, only: [:show, :edit, :update, :destroy]
-  #before_action :authenticate_admin!
+  before_action :authenticate_admin!
 
   # GET /amigos
   # GET /amigos.json

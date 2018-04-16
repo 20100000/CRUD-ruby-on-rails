@@ -50,6 +50,10 @@
             <li><%= link_to "Amigos", amigos_path  %></li>
             <li><%= link_to "Anotações", anotacaos_path  %></li>
           </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Sair", destroy_admin_session_path, method: :delete  %></li>
+
+          </ul>
         </div>
       </div>
     </div>

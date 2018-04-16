@@ -1,6 +1,6 @@
 class AnotacaosController < ApplicationController
   before_action :set_anotacao, only: [:show, :edit, :update, :destroy]
-  #before_action :authenticate_admin!
+  before_action :authenticate_admin!
 
 
   # GET /anotacaos
@@ -9,8 +9,9 @@ class AnotacaosController < ApplicationController
     if params[:busca]
       @anotacaos = Anotacao.buscar(params[:busca])
     else
-      @anotacaos = Anotacao.all
+      @anotacaos = Anotacao.all.paginate(:page => params[:page], :per_page => 5)
     end
+
   end
 
   # GET /anotacaos/1
